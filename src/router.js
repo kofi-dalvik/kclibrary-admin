@@ -10,7 +10,38 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: () => import( './views/Login.vue')
+      meta: {title: 'Login'},
+      component: () => import('./views/Login.vue')
+    },
+    {
+      name: 'auth',
+      path: '/auth',
+      meta: { auth: true },
+      component: () => import('./views/Auth.vue'),
+      children: [
+        {
+          name: 'home',
+          path: 'home',
+          meta: {
+            title: 'KOTEI CONGREGATION'
+          },
+          component: () => import('./views/Home.vue')
+        },
+        {
+          name: 'edit-home',
+          path: 'edit-home',
+          meta: {
+            title: 'KOTEI CONGREGATION'
+          },
+          component: () => import('./views/EditHome.vue')
+        },
+        {
+          name: 'publishers',
+          path: 'publishers',
+          meta: { title: 'PUBLISHERS'},
+          component: () => import('./views/Publishers.vue')
+        }
+      ]
     }
   ]
 })
