@@ -7,11 +7,11 @@
 
     <div class="form">
         <div class="form-group">
-            <input type="text" placeholder="username" class="form-control">
+            <input v-model="user.username" type="text" placeholder="username" class="form-control">
         </div>
 
         <div class="form-group">
-            <input type="password" placeholder="password" class="form-control">
+            <input v-model="user.password" type="password" placeholder="password" class="form-control">
         </div>
 
         <div class="form-group">
@@ -25,7 +25,20 @@
 
 <script>
 export default {
+    data() {
+        return {
+            user: {
+                username: '',
+                password: ''
+            }
+        }
+    },
 
+    methods: {
+        login() {
+            console.log('logging in', this.user)
+        }
+    }
 }
 </script>
 
