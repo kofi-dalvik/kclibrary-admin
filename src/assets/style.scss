@@ -1,6 +1,7 @@
 $primary: #1B4F72;
 $secondary: #F39C12;
 $bg: white;
+$blue: #3498DB;
 
 html, body{
     overflow-x: hidden;
@@ -110,6 +111,19 @@ html, body{
  display: flex;
  justify-content: center;
  align-items: center;
+ position: relative;
+
+ img{
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+     z-index: 5;
+ }
 
  label{
     width: 100px;
@@ -122,6 +136,8 @@ html, body{
     align-items: center;
     text-align: center;
     color: $primary;
+    position: relative;
+    z-index: 10;
  }
 }
 
@@ -221,6 +237,11 @@ margin-left: 15px;
     }
 }
 
+.bg-blue{
+    background: $blue;
+    color: white;
+}
+
 .fg-primary{
     color: $primary;
 }
@@ -270,3 +291,51 @@ p,span,button,a{
     font-size: 14px;
 }
 
+.publishers{
+    padding: 20px;
+    .col-12{
+        margin-bottom: 30px;
+        border-bottom: 1px solid $secondary;
+    }
+    h6{
+        font-size: 12px;
+    }
+    .body{
+        span{
+            font-size: 12px;
+        }
+        .contact{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+            color: $primary;
+        }
+    }
+    .actions{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .btn{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1px;
+        }
+    }
+}
+
+.float-btn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(black, 0.3);
+}

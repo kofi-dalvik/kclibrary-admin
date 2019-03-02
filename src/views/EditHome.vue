@@ -1,7 +1,9 @@
 <template>
     <div class="main-content">
         <div class="banner">
-            <label>change cover photo</label>
+            <label for="image">change cover photo</label>
+            <input type="file" id="image" @change="uploadImage" class="d-none">
+            <img :src="imgUrl" alt="Home Image">
         </div>
         <div class="meeting-days">
             <h5 class="fg-secondary mb-3">MEETING DAYS</h5>
@@ -33,7 +35,22 @@
 export default {
     data() {
         return {
-            me: 'Monday'
+            me: 'Monday',
+            imgUrl: 'https://source.unsplash.com/random'
+        }
+    },
+
+    methods: {
+        uploadImage(event) {
+            const files = event.target.files;
+            if (files && files[0]) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.imgUrl = e.target.result;
+                }
+
+                reader.readAsDataURL(files[0])
+            }
         }
     }
 }

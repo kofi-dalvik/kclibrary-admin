@@ -34,7 +34,6 @@ export default {
     },
     mounted() {
         this.selected = this.value;
-        console.log(this.value);
     }
 }
 </script>
