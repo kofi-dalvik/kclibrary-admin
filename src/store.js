@@ -20,6 +20,15 @@ export default new Vuex.Store({
   actions: {
     login({commit}, userPayload) {
       //make request to server
+    },
+
+    openNav({commit}) {
+      $('.app-nav').removeClass('close-nav')
+                    .addClass('open-nav');
+    },
+
+    closeNav({commit}) {
+      $('.app-nav').removeClass('open-nav')
     }
   }
 })
