@@ -1,5 +1,5 @@
 <template>
-    <div>Publishers</div>
+    <div class="main-content">Publishers</div>
 </template>
 
 <script>

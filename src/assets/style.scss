@@ -6,6 +6,12 @@ html, body{
     overflow-x: hidden;
 }
 
+*{
+    font-family: Helvetica,
+    Arial,
+    sans-serif;
+}
+
 .app-header{
 
 }
@@ -79,34 +85,188 @@ html, body{
 
 .app-header{
     width: 100vw;
-    height: 50px;
+    height: 9vh;
     background: $primary;
     position: fixed;
     top: 0;
     left:0;
+    right: 0;
+    z-index: 100;
+    color: white;
+
+    a{
+        color: white;
+    }
 }
+
+.main-content{
+    margin-top: 9vh;
+}
+
 .banner{
- width: 100vh;
+ width: 100%;
  height: 250px;
  background: #ddd;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ label{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $primary;
+ }
 }
+
 .content{
 margin-left: 15px;
 
-.josh{
- color:$primary;
- font-size: 20px;
- margin-top:20px;
- }
+    .josh{
+    color:$primary;
+    font-size: 20px;
+    margin-top:20px;
+    }
 
- .info{
-     color:#ddd;
+    .info{
+        color:#ddd;
       }
 
       .btn{
-          background: #f0ac40; 
-          border-radius: 15px;
-          width: 200px;
-          margin-top:30px;
+        &.round{
+            border-radius: 50px;
+        }
+
+        &.padded{
+            padding: 10px 20px;
+        }
       }
 }
+
+.app-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    margin-left: -100vw;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    .main-nav{
+        width: 80vw;
+        background: white;
+        position: relative;
+
+        .header{
+            height: 9vh;
+            background: $primary;
+            width: 100%;
+            padding-left: 20px;
+            color: white;
+        }
+
+        a{
+            padding-left: 20px;
+            height: 8vh;
+            color: $primary;
+            text-decoration: none;
+            font-size: 15px;
+            i{
+                font-size: 20px;
+            }
+            &:hover, &:active, &.active{
+                background: rgba($secondary, 0.3);
+                border-right: 10px solid $secondary;
+                i{
+                    color: $secondary;
+                }
+            }
+
+            &.bottom{
+                position: absolute;
+                bottom: 0;
+                border-top: 1px solid $secondary;
+                right: 0;
+                padding-left: 5px;
+                left: 20px;
+            }
+        }
+    }
+    .overlay{
+        background: rgba(black, 0.5);
+        flex-grow: 1;
+    }
+
+    &.open-nav{
+        margin-left: 0;
+    }
+}
+
+.bg-secondary{
+    background: $secondary !important;
+    color: white;
+
+    &:hover, &:active{
+        background: $primary !important;
+    }
+}
+
+.fg-primary{
+    color: $primary;
+}
+
+.fg-secondary{
+    color: $secondary;
+}
+
+.meeting-days{
+    min-height: 400px;
+    padding: 20px 20px;
+    h5{
+        font-size: 13px;
+        font-weight: bold;
+    }
+    span{
+        font-size: 12px;
+    }
+    .weeks{
+        .line{
+            height: 3px;
+            width: 10px;
+            background: $primary;
+        }
+        .btn-group {
+            flex-grow: 1;
+            .dropdown-toggle{
+                background: transparent;
+                color: #cccccc;
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid $primary;
+                font-size: 13px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &:active, &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+p,span,button,a{
+    font-size: 14px;
+}
+

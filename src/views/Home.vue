@@ -1,17 +1,21 @@
 <template>
-    <div>
-        <app-header/>
+    <div class="main-content">
         <div class="banner">
 
         </div>
+
         <div class="content">
             <div class="josh">
-                <p>Hello Josh!</p>
+                <h5>Hello Josh!</h5>
             </div>
+
             <div class="info">
                 <p> Currently, there are no info about your congregation </p>
             </div>
-            <button class="btn-block btn btn-default">Edit Congregation info</button>
+
+            <router-link :to="{name: 'edit-home'}" class="btn round padded btn-default bg-secondary">
+                Edit Congregation info
+            </router-link>
         </div>
     </div>
 </template>

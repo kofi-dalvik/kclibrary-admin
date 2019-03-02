@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-        <button class="btn-block btn btn-default">LOGIN</button>
+        <button @click="login" class="btn-block btn btn-default">LOGIN</button>
         <a href="javascript:void(0)">Forgot Password?</a>
         </div>
     </div>
@@ -37,6 +37,8 @@ export default {
     methods: {
         login() {
             console.log('logging in', this.user)
+            this.$router.push({name: 'home'})
+
         }
     }
 }
