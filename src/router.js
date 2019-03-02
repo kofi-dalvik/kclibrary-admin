@@ -17,7 +17,7 @@ export default new Router({
       name: 'auth',
       path: '/auth',
       meta: { auth: true },
-      component: () => import('./views/Auth.vue'),
+      component: () => import('./components/app-master.vue'),
       children: [
         {
           name: 'home',

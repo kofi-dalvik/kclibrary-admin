@@ -76,3 +76,37 @@ html, body{
         }
     }
 }
+
+.app-header{
+    width: 100vw;
+    height: 50px;
+    background: $primary;
+    position: fixed;
+    top: 0;
+    left:0;
+}
+.banner{
+ width: 100vh;
+ height: 250px;
+ background: #ddd;
+}
+.content{
+margin-left: 15px;
+
+.josh{
+ color:$primary;
+ font-size: 20px;
+ margin-top:20px;
+ }
+
+ .info{
+     color:#ddd;
+      }
+
+      .btn{
+          background: #f0ac40; 
+          border-radius: 15px;
+          width: 200px;
+          margin-top:30px;
+      }
+}
